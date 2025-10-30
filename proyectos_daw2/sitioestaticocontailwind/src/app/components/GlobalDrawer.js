@@ -6,13 +6,20 @@ import Link from "next/link";
 import { useRef, useCallback } from "react";
 
 export default function GlobalDrawer({ children }) {
-  //Para
+
   const checkboxRef = useRef(null);
+
   const toggleDrawer = useCallback(() => {
     if (checkboxRef.current) {
       checkboxRef.current.checked = !checkboxRef.current.checked;
     }
   }, []);
+
+  const closeDrawer = () => {
+    if (checkboxRef.current) {
+      checkboxRef.current.checked = false; // Forzar cierre
+    }
+  };
 
   return (
     <div className="drawer">
@@ -39,21 +46,23 @@ export default function GlobalDrawer({ children }) {
         <label htmlFor="main-drawer" className="drawer-overlay"></label>
 
         <ul className="menu p-4 w-90 min-h-full bg-base-200 text-xl ">
-          
           <li>
-            <Link href="/">Inicio</Link>
+            <Link href="/" onClick={closeDrawer}>Inicio</Link>
           </li>
           <li>
-            <Link href="/mujer">Mujer</Link>
+            <Link href="/hombre" onClick={closeDrawer}>Hombre</Link>
           </li>
           <li>
-            <Link href="/hombre">Hombre</Link>
+            <Link href="/mujer" onClick={closeDrawer}>Mujer</Link>
           </li>
           <li>
-            <Link href="/novedades">Novedades</Link>
+            <Link href="/perfumes" onClick={closeDrawer}>Perfumes</Link>
           </li>
           <li>
-            <Link href="/rebajas">Rebajas</Link>
+            <Link href="/novedades" onClick={closeDrawer}>Novedades</Link>
+          </li>
+          <li>
+            <Link href="/rebajas" onClick={closeDrawer}>Rebajas</Link>
           </li>
         </ul>
       </div>

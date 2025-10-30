@@ -1,15 +1,25 @@
+'use client'; // <-- 1. AÑADIDO: Necesario para usar hooks
+
+import { useCart } from '../../context/CartContext'; // <-- 2. AÑADIDO: Importa el hook del carrito (ajusta la ruta si es necesario)
+import Link from 'next/link'; // <-- AÑADIDO: Para hacer el logo y el carrito clicables
+
 export default function Navbar({ onMenuClick }) {
+  
+  // 3. AÑADIDO: Obtiene el estado del carrito y calcula el total
+  const { cart } = useCart();
+  const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+
   return (
     <nav className="navbar bg-transparent text-black sticky top-0 z-20 px-6">
       <div className="navbar-start">
         <button
           onClick={onMenuClick}
           className="btn btn-ghost btn-circle 
-             hover:bg-transparent 
-             focus:bg-transparent 
-             focus:outline-none 
-             hover:border-transparent 
-             focus:ring-0"
+                     hover:bg-transparent 
+                     focus:bg-transparent 
+                     focus:outline-none 
+                     hover:border-transparent 
+                     focus:ring-0"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -28,11 +38,11 @@ export default function Navbar({ onMenuClick }) {
         </button>
       </div>
 
-      {/* CENTRO: Logo */}
+      {/* CENTRO: Logo (envuelto en Link) */}
       <div className="navbar-center">
-        <h1 className="font-serif text-3xl font-bold tracking-wide">
+        <Link href="/" className="font-serif text-3xl font-bold tracking-wide">
           STRESSEN
-        </h1>
+        </Link>
       </div>
 
       {/* DERECHA: Buscar / usuario / carrito */}
@@ -44,13 +54,15 @@ export default function Navbar({ onMenuClick }) {
             className="outline-none bg-transparent text-sm"
           />
         </div>
+        
+        {/* Botón de Usuario (sin cambios) */}
         <button
           className="btn btn-ghost btn-circle 
-             hover:bg-transparent 
-             focus:bg-transparent 
-             focus:outline-none 
-             hover:border-transparent 
-             focus:ring-0"
+                     hover:bg-transparent 
+                     focus:bg-transparent 
+                     focus:outline-none 
+                     hover:border-transparent 
+                     focus:ring-0"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -67,29 +79,41 @@ export default function Navbar({ onMenuClick }) {
             />
           </svg>
         </button>
-        <button
+        
+        {/* 4. AÑADIDO: Botón de Carrito con Indicador (envuelto en Link) */}
+        <Link
+          href="/carrito" // <-- Enlaza a la futura página del carrito
           className="btn btn-ghost btn-circle 
-             hover:bg-transparent 
-             focus:bg-transparent 
-             focus:outline-none 
-             hover:border-transparent 
-             focus:ring-0"
+                     hover:bg-transparent 
+                     focus:bg-transparent 
+                     focus:outline-none 
+                     hover:border-transparent 
+                     focus:ring-0"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="w-5 h-5"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M12 4.5c2.485 0 4.5 2.015 4.5 4.5v.75H7.5V9c0-2.485 2.015-4.5 4.5-4.5zM4.5 9h15v10.5a2.25 2.25 0 01-2.25 2.25H6.75A2.25 2.25 0 014.5 19.5V9z"
-            />
-          </svg>
-        </button>
+          <div className="indicator"> {/* Contenedor del indicador de daisyUI */}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="w-5 h-5"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M12 4.5c2.485 0 4.5 2.015 4.5 4.5v.75H7.5V9c0-2.485 2.015-4.5 4.5-4.5zM4.5 9h15v10.5a2.25 2.25 0 01-2.25 2.25H6.75A2.25 2.25 0 014.5 19.5V9z"
+              />
+            </svg>
+            
+            {/* Muestra la burbuja solo si hay artículos */}
+            {totalItems > 0 && (
+              <span className="badge badge-sm badge-primary indicator-item">
+                {totalItems}
+              </span>
+            )}
+          </div>
+        </Link>
       </div>
     </nav>
   );

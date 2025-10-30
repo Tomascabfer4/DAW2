@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import GlobalDrawer from "./components/GlobalDrawer";
+import { CartProvider } from "@/context/CartContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,17 +14,19 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Mi Proyecto Personal - Next.js + Tailwind + daisyUI",
+  title: "STRESSEN España | Nueva Colección",
   description: "Proyecto para la asignatura - ejemplo con daisyUI",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="es">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <GlobalDrawer>
-          {children}
-        </GlobalDrawer>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        <CartProvider>
+          <GlobalDrawer>{children}</GlobalDrawer>
+        </CartProvider>
       </body>
     </html>
   );
