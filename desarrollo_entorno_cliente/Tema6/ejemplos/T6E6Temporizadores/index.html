@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="scripts/temporizadores.js"></script>
+</head>
+<body>
+    
+        <script>
+          setInterval(() => { 
+                var hora=new Date();
+                console.clear();
+                console.log("Actualizando hora");
+                console.log("-----------------------");
+                console.log(hora.getHours()+":"+hora.getMinutes()+":"+hora.getSeconds());
+            }, 2000);
+
+
+          /*setInterval((function() { 
+                var hora=new Date();
+                console.log("Actualizando hora");
+                console.log("-----------------------");
+                console.log(hora.getHours()+":"+hora.getMinutes()+":"+hora.getSeconds());
+            }, 2000); */
+      
+       
+
+
+   
+           
+        </script>
+
+    
+</body>
+</html>

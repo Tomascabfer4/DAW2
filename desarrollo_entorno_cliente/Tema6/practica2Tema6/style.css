@@ -1,0 +1,90 @@
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fafafa;
+  color: #333;
+}
+
+/* Header */
+header {
+  background-color: #0077b6;
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+/* Main */
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1.5rem;
+}
+
+/* Noticias */
+#noticias {
+  flex: 3;
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.titulo {
+  font-weight: bold;
+  color: #00f;
+  animation: pulso-neon 2s ease-in-out infinite;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #00f;
+}
+
+.frase {
+  font-weight: bold;
+  color: rgb(255, 0, 0);
+  animation: pulso-neon 2s ease-in-out infinite;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px rgb(255, 0, 0);
+}
+
+#noticias h2 {
+  color: #0077b6;
+}
+
+img {
+  border-radius: 25px;
+}
+
+/* Aside */
+aside {
+  flex: 1;
+  background-color: #e0f7fa;
+  padding: 1rem;
+  margin-left: 1rem;
+  border-radius: 10px;
+}
+
+#listaMensajes {
+  list-style: none;
+  padding: 0;
+  font-weight: 800;
+  color: blue;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  background-color: #0077b6;
+  color: white;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+@keyframes pulso-neon {
+  0%,
+  100% {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #00f;
+  }
+  50% {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #00f;
+  }
+}

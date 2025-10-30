@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kumbh+Sans:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --White: hsl(0, 100%, 100%);
+  --Purple100: hsl(275, 100%, 97%);
+  --Purple600: hsl(292, 16%, 49%);
+  --Purple950: hsl(292, 42%, 14%);
+}
+
+.divtotal {
+  width: 580px;
+  background-color: var(--White);
+  border-radius: 12px;
+  display: grid;
+  justify-items: center;
+  padding: 30px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+body {
+  font-size: 16x;
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  font-family: "Work Sans", sans-serif;
+  background-image: url("./assets/images/background-pattern-desktop.svg");
+  background-color: var(--Purple100);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: 0% -5%;
+}
+
+.encabezadoFaq {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 7%;
+}
+
+.dentroPregunta {
+  padding-top: 5%;
+  color: var(--Purple600);
+}
+
+.linea {
+  width: 100%;
+  border-color: var(--Purple100);
+  opacity: 0.2;
+  margin-bottom: 4%;
+  margin-top: 5%;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 40px;
+  margin-left: 5%;
+}
+
+h2 {
+  font-weight: 600;
+  color: var(--Purple950);
+  font-size: 17px;
+}
+
+p {
+  font-weight: 400;
+  color: var(--Gray500);
+}
+
+details {
+  width: 100%;
+}
+
+summary {
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+}
+
+.icon-minus {
+  display: none;
+}
+
+details[open] .icon-minus {
+  display: block;
+}
+
+details[open] .icon-plus {
+  display: none;
+}
+
+footer {
+  font-size: 11px;
+  text-align: center;
+  font-family: "Roboto Mono", monospace;
+  margin-top: 5px;
+}
+
+/* --- Media Query para diseño móvil (375px) --- */
+@media (max-width: 375px) {
+  body {
+    padding: 24px;
+    background-image: url("./assets/images/background-pattern-mobile.svg");
+    background-size: 100%;
+    background-position: top;
+  }
+
+  .divtotal {
+    width: 100%;
+    padding: 24px;
+  }
+
+  .encabezadoFaq {
+    padding-bottom: 24px;
+  }
+
+  h1 {
+    font-size: 32px;
+    margin-left: 24px;
+  }
+
+  h2 {
+    font-size: 16px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+}

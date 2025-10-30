@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: inter, sans-serif;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+footer {
+    background-color: #00334c;
+    justify-items: center;
+}
+
+.parrafoFooter {
+    color: white;
+    padding-top: 10px;
+}
+
+.navEnlacesFooter {
+    color: orange;
+    display: flex;
+    padding-bottom: 10px;
+}
+
+.enlaceFooter {
+    margin: 5px 10px;
+}
+
+header {
+    background-color: #00334c;
+    display: flex;
+    align-items: center;
+    padding: 18px;
+    height: 80px;
+}
+
+.h1Titulo {
+    color: orange;
+    font-size: 22px;;
+}
+
+form {
+    display: flex;
+    flex-grow: 1;
+}
+
+input {
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+    height: 30px;
+    margin-left: 10px;
+    padding-left: 10px;
+}
+
+.botonBusqueda {
+    background-color: orange;
+    color: #00334c;
+    border-radius: 5px;
+    border: none;
+    width: 6%;
+    font-weight: 700;
+    margin: 0 12px;
+}
+
+.navEnlacesHeader {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.enlaceHeader {
+    margin: 0 10px;
+    font-size: 14px;
+}
+
+.divOfertas {
+    background-color: orange;
+    display: grid;
+    justify-items: center;
+    text-align: center;
+    height: 23vh;
+}
+
+.h1Ofertas {
+    color: #00334c;
+    margin-top: 34px;
+}
+
+.parrafoOfertas {
+    color: #00334c;
+    font-size: 15px;
+}
+
+.botonOfertas {
+    background-color: #00334c;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    width: 5%;
+    height: 32px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.divDestacados {
+  margin: auto;
+  background-color: white;
+  border-radius: 12px;
+  display: grid;
+  justify-items: center;
+}
+
+.divProductos{
+  padding: 30px 0;
+  display: flex;
+  justify-items: center;
+}
+
+.h1Destacados {
+    color: #00334c;
+    margin-top: 30px;
+}
+
+.divProducto {
+    background-color: whitesmoke;
+    border-radius: 4px;
+    width: 400px;
+    padding: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-color: #2d32351d;
+    border-width: 1px;
+    border-style: solid;
+    display: grid;
+    justify-items: center;
+    text-align: center;
+}
+
+.h2Producto {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color:#00334c;
+}
+
+.parrafoProducto {
+    color: orange;
+    font-weight: 600;
+}
+
+.botonProducto {
+    margin-top: 15px;
+    background-color: orange;
+    color: #00334c;
+    width: 38%;
+    height: 32px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 400;
+}

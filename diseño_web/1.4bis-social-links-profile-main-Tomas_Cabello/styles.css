@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+
+/* RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --Green: hsl(75, 94%, 57%);
+  --White: hsl(0, 0%, 100%);
+  --Grey700: hsl(0, 0%, 20%);
+  --Grey800: hsl(0, 0%, 12%);
+  --Grey900: hsl(0, 0%, 8%);
+}
+
+div {
+  width: 260px;
+  height: 420px;
+  background-color: var(--Grey800);
+  border-radius: 10px;
+  text-align: center;
+  padding: 20px;
+}
+
+body {
+  color: var(--White);
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  font-family: "Inter", sans-serif;
+  background-color: var(--Grey900);
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 11.5px;
+  margin-bottom: 20px;
+  color: var(--Green);
+}
+
+p {
+  font-size: 10px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  opacity: 0.7;
+}
+
+img {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  margin: 10px;
+}
+
+button {
+  width: 220px;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  color: var(--White);
+  font-weight: 600;
+  font-size: 11px;
+  opacity: 0.9;
+  margin-bottom: 12px;
+  cursor: pointer;
+  background-color: var(--Grey700);
+  transition: opacity 0.3s ease;
+}
+
+button:hover {
+  color: var(--Grey900);
+  background-color: var(--Green);
+}
+
+footer {
+  font-size: 11px;
+  text-align: center;
+  font-family: "Roboto Mono", monospace;
+  margin-top: 5px;
+}
+
+@media (max-width: 375px) {
+  body {
+    display: block;
+    min-height: 100vh;
+    padding: 40px 20px;
+  }
+
+  div {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 25px;
+  }
+
+  button {
+    width: 100%;
+    height: 40px;
+    font-size: 13px;
+  }
+
+  footer {
+    margin-top: 15px;
+  }
+}

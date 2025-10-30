@@ -1,0 +1,103 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Para centrar contenido principal */
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh; /* Ocupa al menos el alto de la vista */
+    box-sizing: border-box;
+}
+
+.hora {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 0;
+    font-size: 2em; /* Hace que el ":" sea grande */
+}
+
+.divMinutos, .divSegundos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 20px;
+}
+
+.dosPuntos {
+  margin-top: 160px;
+  margin-left: 15px;
+}
+
+.minutos, .segundos {
+    border-radius: 5px;
+    border: 2px solid black; /* Aumentado a 2px para que se vea mejor */
+    padding: 10px 20px;
+    font-size: 3em; /* Hace que los números sean grandes */
+    min-width: 80px;
+    text-align: center;
+}
+
+/* Estilos para los botones */
+.botones {
+    display: flex;
+    gap: 15px; /* Espacio entre los botones */
+    margin-bottom: 20px;
+}
+
+.botones button {
+    padding: 10px 20px;
+    font-size: 1.1em;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#iniciar {
+    background-color: #4CAF50; /* Verde */
+    color: white;
+}
+
+#parar {
+    background-color: #f44336; /* Rojo */
+    color: white;
+}
+
+#detener {
+    background-color: #2196F3; /* Azul */
+    color: white;
+}
+
+.botones button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Estilos para el contenedor de mensajes */
+.mensajes {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 20px;
+    width: 80%;
+    max-width: 400px;
+    align-self: center; /* Asegura que se centre */
+}
+
+#listaMensajes {
+    list-style: none;
+    padding: 0;
+    max-height: 150px;
+    overflow-y: auto; /* Scroll si hay muchos mensajes */
+}
+
+/* Footer */
+footer {
+    width: 100%; /* Ocupa todo el ancho */
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding: 1rem;
+    margin-top: auto; /* Empuja el footer al final */
+}
